@@ -1,0 +1,13 @@
+<div class="project">
+	<div class="container">
+	
+
+		<%= form_for(@project, :url => {:action => 'update'}) do |f| %>		
+			<%= f.text_field :title %>
+			<%= f.text_field :description %>
+			<%= f.file_field :image %>
+			<%= f.submit "Update" %>
+		<% end %>
+
+	</div>
+</div>

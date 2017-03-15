@@ -1,0 +1,15 @@
+<% @projects.each do |project| %>
+<div class="project">
+	<p class="image"><%= image_tag "/books/#{project.id}/image/#{project.image_filename}" if project.image_filename? %></p>
+	<P class="title"><%= project.title %></P>
+	<p class="description"><%= project.description %></p>
+	<% if current_user && (current_user.editor? | current_user.admin?) %>
+	<%= link_to 'Edit', edit_project_path(project) %>
+	<%= link_to 'Delete', destroy_project_path(project), :method => :delete %>
+	<% end %>
+
+</div>
+<% end %>
+	<% if current_user && (current_user.editor? | current_user.admin?) %>
+	<%= link_to 'New Project', "projects/new" %>
+	<% end %>

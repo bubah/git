@@ -1,0 +1,11 @@
+<% @users.each do |user| %>
+<div class="user">
+	<P class="firstname"><%= user.first_name %></P>
+	<p class="lastname"><%= user.last_name %></p>
+	<% if current_user && (current_user.editor? | current_user.admin?) %>
+	<%= link_to 'Edit', edit_user_path(user) %>
+	<%= link_to 'Delete', destroy_user_path(user), confirm: 'Are you sure you want to delete user?', :method => :delete %>
+	<% end %>
+
+</div>
+<% end %>
