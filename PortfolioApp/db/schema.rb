@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170315231803) do
+ActiveRecord::Schema.define(version: 20170325180223) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "image"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20170315231803) do
     t.string   "role"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.boolean  "email_confirmed"
+    t.string   "confirm_token"
   end
 
 end

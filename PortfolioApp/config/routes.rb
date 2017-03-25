@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   	resources :projects, only: [:index, :new, :create]
  root 'projects#index'
+  get 'home' => 'projects#home'
   get 'projects/new' => 'projects#new'
   post 'projects' => 'projects#create'
   get 'projects/:id/edit' => 'projects#edit', as: :edit_project
@@ -17,5 +18,11 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
+
+  resources :users do
+    member do
+      get :confirm_email
+    end
+  end
   
 end

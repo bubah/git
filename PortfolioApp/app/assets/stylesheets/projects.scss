@@ -1,3 +1,57 @@
 // Place all the styles related to the Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.white-link {
+	color: white;
+	text-decoration: none;
+}
+
+a:link {
+	text-decoration: none;
+	color: white;
+}
+
+a:visited {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	text-decoration: none;
+
+}
+
+.bg-1 {
+	background-color: #1abc9c;;
+	columns: #ffffff;
+}
+
+.bg-2 {
+	background-color: #474e5d;
+	color: #ffffff;
+}
+
+.bg-3 {
+	background-color: #ffffff;
+	color: #555555;
+}
+
+.word-tenthpt-sp {
+	word-spacing: .1px;
+}
+
+.bubah-jumbo {
+	height: 200px;
+}
+
+.title {
+	font-style: italic;
+}
+
+.home-img {
+	height: 350px;
+}
+
+.home-img2 {
+	height: 150px;
+}

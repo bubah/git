@@ -1,15 +1,27 @@
-<% @projects.each do |project| %>
-<div class="project">
-	<p class="image"><%= image_tag project.image.url if project.image? %></p>
-	<P class="title"><%= project.title %></P>
-	<p class="description"><%= project.description %></p>
-	<% if current_user && (current_user.editor? | current_user.admin?) %>
-	<%= link_to 'Edit', edit_project_path(project) %>
-	<%= link_to 'Delete', destroy_project_path(project), :method => :delete %>
+
+<div class="container-fluid bg-3 text-center">
+<h3>My Work</h3>
+<div class="row text-left">
+<br><br>
+	<% @projects.each do |project| %>
+	<div class="col-sm-4">
+		<h3 class="title"><%= project.title %></h3>
+		<p class="image"><%= image_tag project.image.url if project.image? %></p>
+		<p class="description"><%= project.description %></p>
+		<% if current_user && (current_user.editor? | current_user.admin?) %>
+		<button class="btn btn-warning"><%= link_to 'Edit', edit_project_path(project) %></button>
+		<button class="btn btn-danger"><%= link_to 'Delete', destroy_project_path(project), :method => :delete %></button>
+		<% end %>
+
+	</div>
 	<% end %>
+</div>
+	<br>
+	<br>
+<div>
+	<% if current_user && (current_user.editor? | current_user.admin?) %>
+	<button class="text-center btn btn-success"><%= link_to 'New Project', "projects/new" %></button>
+	<% end %>
+</div>
 
 </div>
-<% end %>
-	<% if current_user && (current_user.editor? | current_user.admin?) %>
-	<%= link_to 'New Project', "projects/new" %>
-	<% end %>
