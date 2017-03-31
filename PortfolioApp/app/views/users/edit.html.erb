@@ -8,6 +8,7 @@
 			<%= f.text_field :email, :placeholder => 'Email' %>
 			<%= f.text_field :password, :placeholder => 'Password' %>
 			<%= f.text_field :role, :placeholder => 'Role' %>
+			<%= f.check_box :email_confirmed %><label>Confirm Email</label>
 			<%= f.submit "Update", class: "btn btn-success" %>
 		<% end %>
 

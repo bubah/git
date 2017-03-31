@@ -51,7 +51,12 @@
   
     </div>
   </nav>
-
+     <div class="container-fluid text-center">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+    <% debug(params) if Rails.env.development? %>
+  </div>
     <%= yield %>
 
     <div class="container-fluid bg-4 text-center">
