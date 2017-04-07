@@ -5,13 +5,15 @@
 <br><br>
 	<% @projects.each do |project| %>
 	<div class="col-sm-4">
-		<h3 class="title"><%= project.title %></h3>
+		<div class="thumbnail text-center width-450">
+		<h3 class="title text-left leftmargin-5"><%= project.title %></h3>
 		<p class="image"><%= image_tag project.image.url if project.image? %></p>
-		<p class="description"><%= project.description %></p>
+		<p class="description text-left width-400 leftmargin-5"><%= project.description %></p>
 		<% if current_user && (current_user.editor? | current_user.admin?) %>
-		<button class="btn btn-warning"><%= link_to 'Edit', edit_project_path(project) %></button>
-		<button class="btn btn-danger"><%= link_to 'Delete', destroy_project_path(project), :method => :delete %></button>
+		<button class="btn btn-warning text-left leftmargin-5"><%= link_to 'Edit', edit_project_path(project) %></button>
+		<button class="btn btn-danger text-left"><%= link_to 'Delete', destroy_project_path(project), :method => :delete %></button>
 		<% end %>
+		</div>
 
 	</div>
 	<% end %>

@@ -10,6 +10,9 @@ class ProjectsController < ApplicationController
 	def home
 	end
 
+	def about
+	end
+
 	def new
 		@project = Project.new
 	end

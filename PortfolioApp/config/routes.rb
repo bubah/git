@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   	resources :projects, only: [:index, :new, :create]
  root 'projects#index'
   get 'home' => 'projects#home'
+  get '/about' => 'projects#about'
   get 'projects/new' => 'projects#new'
   post 'projects' => 'projects#create'
   get 'projects/:id/edit' => 'projects#edit', as: :edit_project
